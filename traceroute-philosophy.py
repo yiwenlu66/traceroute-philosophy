@@ -50,6 +50,8 @@ class Crawl():
             internal.extract()
         for red in body.find_all("a", {"class": "new"}):
             red.extract()
+        for red in body.find_all("a", {"class": "extiw"}):
+            red.extract()
 
         # Should use a pure RE solution
         for a in body.find_all("a"):
