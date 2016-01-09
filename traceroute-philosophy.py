@@ -87,3 +87,5 @@ except NoLinkException:
     print("Cannot find valid link. No route to 'philosophy'.")
 except requests.exceptions.ConnectionError:
     print("Cannot reach Wikipedia server. Please check your connection.")
+except KeyboardInterrupt:
+    pass
