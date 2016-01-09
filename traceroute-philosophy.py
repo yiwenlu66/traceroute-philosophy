@@ -42,15 +42,7 @@ class Crawl():
 
     def get_next_url(self):
         body = self.soup.find("div", {"id": "mw-content-text"})
-        for navbox in body.find_all("table", {"class": "navbox"}):
-            navbox.extract()
-        for navbox in body.find_all("table", {"class": "vertical-navbox"}):
-            navbox.extract()
-        for box in body.find_all("table", {"class": "metadata"}):
-            box.extract()
-        for infobox in body.find_all("table", {"class": "infobox"}):
-            infobox.extract()
-        for tag in body.find_all(["sup", "i", "span", "div", "small", "cite"]):
+        for tag in body.find_all(["table", "sup", "i", "span", "div", "small", "cite"]):
             tag.extract()
         for ext in body.find_all("a", {"class": "external text"}):
             ext.extract()
